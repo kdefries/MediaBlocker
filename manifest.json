@@ -1,0 +1,33 @@
+{
+"manifest_version": 2,
+    "name": "MediaBlocker",
+	"version": "0.1",
+    "description": "Blocks media-related posts",
+	
+	"permissions": [
+		"tabs", "https://*/*"
+		],
+		
+	"web_accessible_resources": [
+		"https://api.myjson.com/bins/dbekx",
+		"https://www.google.com/*"
+		],
+		
+    "content_scripts": [
+        {
+            "matches": [
+                "<all_urls>"
+            ],
+            "js": [
+                "content.js"
+            ],
+            "run_at": "document_end",
+			
+			"js": ["jquery-3.1.1.min.js", "content.js"]
+        }
+    ],
+	
+    "browser_action": {
+		"default_icon": "icon.png"
+    }
+}
